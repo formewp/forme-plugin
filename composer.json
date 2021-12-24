@@ -1,0 +1,22 @@
+{
+    "name": "vendor-name/replace-me-plugin",
+    "description": "Your description goes here",
+    "type": "wordpress-plugin",
+    "require": {
+        "forme/framework": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "VendorName\\ReplaceMePlugin\\": "app/"
+        },
+        "files": [
+            "helpers/helpers.php"
+        ]
+    },
+    "extra": {
+        "dev-files": [
+            "/githooks/*",
+            "/.*"
+        ]
+    }
+}

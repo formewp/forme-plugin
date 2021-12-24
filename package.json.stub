@@ -1,0 +1,15 @@
+{
+    "name": "replace-me-plugin",
+    "description": "Your description goes here",
+    "main": "assets/src/js/app.js",
+    "scripts": {
+        "encore": "encore",
+        "build": "encore production",
+        "dev": "encore dev"
+    },
+    "private": true,
+    "devDependencies": {
+        "@symfony/webpack-encore": "^1.6.1",
+        "webpack-notifier": "^1.13.0"
+    }
+}

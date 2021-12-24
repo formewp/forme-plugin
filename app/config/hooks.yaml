@@ -1,0 +1,24 @@
+actions:
+  # Registries
+  - hook: wp_enqueue_scripts
+    class: VendorName\ReplaceMePlugin\Registry\PublicQueueRegistry
+  - hook: admin_enqueue_scripts
+    class: VendorName\ReplaceMePlugin\Registry\AdminQueueRegistry
+  - hook: init
+    class: VendorName\ReplaceMePlugin\Registry\ShortcodeRegistry
+  - hook: init
+    class: VendorName\ReplaceMePlugin\Registry\PostTypeRegistry
+  - hook: acf/init
+    class: VendorName\ReplaceMePlugin\Registry\FieldRegistry
+  - hook: plugins_loaded
+    class: VendorName\ReplaceMePlugin\Registry\I18nRegistry
+  - hook: cli_init
+    class: VendorName\ReplaceMePlugin\Registry\CommandRegistry
+filters:
+  - hook: post_updated_messages
+    class: VendorName\ReplaceMePlugin\Registry\PostTypeRegistry
+    method: updateMessages
+  - hook: script_loader_tag
+    class: VendorName\ReplaceMePlugin\Registry\PublicQueueRegistry
+    method: moduleTag
+    arguments: 3
