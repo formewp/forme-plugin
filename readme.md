@@ -1,3 +1,5 @@
+<p align="center"><a href="https://formewp.github.io" target="_blank"><img src="https://formewp.github.io/logo.svg" width="400"></a></p>
+
 # Forme WordPress Plugin Boilerplate
 
 Part of the Forme Framework, an MVC WordPress framework maintained by Moussa Clarke @ Sanders Web Works.
