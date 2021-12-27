@@ -53,6 +53,10 @@ Encore
         config.corejs = 3;
     })
 
+    .configureDevServerOptions(options => {
+        options.allowedHosts = 'all';
+    })
+
     // enables Sass/SCSS support
     //.enableSassLoader()
 
