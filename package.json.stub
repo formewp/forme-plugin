@@ -5,7 +5,8 @@
     "scripts": {
         "encore": "encore",
         "build": "encore production",
-        "dev": "encore dev"
+        "dev": "encore dev",
+        "serve": "encore dev-server"
     },
     "private": true,
     "devDependencies": {
