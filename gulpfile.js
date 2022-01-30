@@ -5,13 +5,18 @@ const { pascalCase, paramCase, snakeCase, capitalCase, camelCase } = require("ch
 const rename = require('gulp-rename');
 const del = require('del');
 
-// TODO: support other view engines - blade, twig, plates 3
 const viewDirectories = [
     'views/plates-4',
+    'views/plates',
+    'views/twig',
+    'views/blade'
 ];
 
 const viewClasses = {
     'plates-4': 'LegacyPlatesView',
+    'blade': 'BladeView',
+    'twig': 'TwigView',
+    'plates': 'PlatesView',
 };
 
 function swapNameStrings() {
