@@ -5,6 +5,15 @@ const { pascalCase, paramCase, snakeCase, capitalCase, camelCase } = require("ch
 const rename = require('gulp-rename');
 const del = require('del');
 
+// TODO: support other view engines - blade, twig, plates 3
+const viewDirectories = [
+    'views/plates-4',
+];
+
+const viewClasses = {
+    'plates-4': 'LegacyPlatesView',
+};
+
 function swapNameStrings() {
     let paths = [
         'app/**/**',
@@ -66,4 +75,25 @@ function deleteRenamedFiles() {
     ]);
 }
 
-exports.default = series(swapNameStrings, swapVendorStrings, renameFiles, deleteRenamedFiles);
+function copyViews() {
+    if (typeof argv.view === "undefined") {
+        argv.view = "plates-4";
+    }
+    // copy contents to /views/
+    return src('views/' + argv.view + '/**/**').pipe(dest('./views/'));
+}
+
+function deleteSourceViews() {
+    return del(viewDirectories);
+}
+
+function updateViewClass() {
+    if (typeof argv.view === "undefined") {
+        argv.view = "plates-4";
+    }
+    return src('./app/Core/View.php')
+        .pipe(replace('ViewClassGoesHere', viewClasses[argv.view]))
+        .pipe(dest('./app/Core/'));
+}
+
+exports.default = series(swapNameStrings, swapVendorStrings, renameFiles, deleteRenamedFiles, copyViews, deleteSourceViews, updateViewClass);
