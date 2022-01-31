@@ -9,7 +9,7 @@ parameters:
   level: 6
   bootstrapFiles:
     - ../../../../vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
-    - ../../../../vendor/paulthewalton/acf-pro-stubs/acf-pro-stubs.php
+    - ../../../../vendor/phb-stubs/acf-pro-stubs/acf-pro-stubs.php
   ignoreErrors:
     - "#Unsafe usage of new static#"
   checkMissingIterableValueType: false
