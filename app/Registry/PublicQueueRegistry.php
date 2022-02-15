@@ -20,7 +20,7 @@ final class PublicQueueRegistry implements RegistryInterface
          * if you aren't using a forme theme, you might need to sort out jquery here
          */
         // via encore/dist or static
-        wp_enqueue_style('replace-me-plugin-public-styles', Assets::uri('app.css'), [], Assets::time('app.css'), false);
+        wp_enqueue_style('replace-me-plugin-public-styles', Assets::uri('app.css'), [], Assets::time('app.css'));
         wp_enqueue_script('replace-me-plugin-public-scripts', Assets::uri('app.js'), ['jquery'], Assets::time('app.js'), true);
     }
 
