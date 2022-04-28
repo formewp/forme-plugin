@@ -3,7 +3,7 @@
     "description": "Your description goes here",
     "type": "wordpress-plugin",
     "require": {
-        "forme/framework": "dev-master"
+        "forme/framework": "^2.0.0"
     },
     "autoload": {
         "psr-4": {
