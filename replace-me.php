@@ -30,15 +30,6 @@ if (!defined('WPINC')) {
     exit;
 }
 
-/**
- *  Composer autoload.
- **/
-$localAutoload = plugin_dir_path(__FILE__) . 'vendor/autoload.php';
-if (file_exists($localAutoload)) {
-    // if it exists, load it. otherwise we assume composer install has been done from the project root
-    include_once plugin_dir_path(__FILE__) . 'vendor/autoload.php';
-}
-
 /*
  * Load dotenv
  *
