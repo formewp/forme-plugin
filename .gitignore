@@ -3,3 +3,4 @@ node_modules
 .php-cs-fixer.cache
 phpstan.neon
 assets/dist
+tools
