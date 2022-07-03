@@ -3,7 +3,23 @@
         "enabled": true,
         "actions": [
             {
-                "action": "\\Ramsey\\CaptainHook\\ValidateConventionalCommit"
+                "action": "\\Ramsey\\CaptainHook\\ValidateConventionalCommit",
+                "options": {
+                    "config": {
+                        "types": [
+                            "feat",
+                            "fix",
+                            "docs",
+                            "style",
+                            "refactor",
+                            "perf",
+                            "test",
+                            "chore"
+                        ],
+                        "typeCase": "lower",
+                        "scopeCase": "lower"
+                    }
+                }
             }
         ]
     },
@@ -26,7 +42,23 @@
         "enabled": true,
         "actions": [
             {
-                "action": "\\Ramsey\\CaptainHook\\PrepareConventionalCommit"
+                "action": "\\Ramsey\\CaptainHook\\PrepareConventionalCommit",
+                "options": {
+                    "config": {
+                        "types": [
+                            "feat",
+                            "fix",
+                            "docs",
+                            "style",
+                            "refactor",
+                            "perf",
+                            "test",
+                            "chore"
+                        ],
+                        "typeCase": "lower",
+                        "scopeCase": "lower"
+                    }
+                }
             }
         ]
     },
