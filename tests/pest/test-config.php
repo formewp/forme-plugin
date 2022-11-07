@@ -11,7 +11,7 @@ use Forme\Framework\Models\UserMeta;
 
 use function Forme\getInstance;
 
-use VendorName\ReplaceMeTheme\Database\Migrations;
+use VendorName\ReplaceMePlugin\Database\Migrations;
 
 function migrate()
 {
