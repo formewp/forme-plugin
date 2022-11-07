@@ -4,3 +4,7 @@ node_modules
 phpstan.neon
 assets/dist
 tools
+.phpunit.result.cache
+logs
+phinx.yml
+wp-test

@@ -1,15 +1,21 @@
 # Copy to phpstan.neon and edit as appropriate.
-# The below should work in a standard non-symlinked Forme WP set up, where the vendor is one up from the WP root folder, but it won't work with symlinks or with the Bedrock directory structure
 includes:
-  - ../../../../vendor/szepeviktor/phpstan-wordpress/extension.neon
+  - vendor/szepeviktor/phpstan-wordpress/extension.neon
+  - larastan.neon
 parameters:
   scanDirectories:
-    # WordPress root
+    # WordPress root - this might work in a standard non-symlinked Forme setup but you'll usually want the absolute path to a local wordpress installation
     - ../../../
   level: 6
   bootstrapFiles:
-    - ../../../../vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
-    - ../../../../vendor/phb-stubs/acf-pro-stubs/acf-pro-stubs.php
+    - phpstan-suppress-errors.php
+    - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
+    - vendor/php-stubs/acf-pro-stubs/acf-pro-stubs.php
   ignoreErrors:
     - "#Unsafe usage of new static#"
+  reportUnmatchedIgnoredErrors: false
   checkMissingIterableValueType: false
+  paths:
+    - ./app
+  excludePaths:
+    - tests

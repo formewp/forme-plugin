@@ -12,10 +12,13 @@ return $config->setRules([
     'yoda_style'                         => ['equal' => false, 'identical' => false, 'less_and_greater' => false],
     'blank_line_after_opening_tag'       => false,
     'phpdoc_no_package'                  => false,
+    'phpdoc_no_alias_tag'                => false,
+    'phpdoc_to_comment'                  => false,
     'concat_space'                       => ['spacing' => 'one'],
     'binary_operator_spaces'             => ['default' => 'align'],
     'increment_style'                    => ['style' => 'post'],
     'no_leading_import_slash'            => false,
+    'global_namespace_import'            => ['import_classes' => true, 'import_constants' => false, 'import_functions' => false],
 ])
     ->setFinder($finder)
 ;
