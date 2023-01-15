@@ -3,9 +3,6 @@ includes:
   - vendor/szepeviktor/phpstan-wordpress/extension.neon
   - larastan.neon
 parameters:
-  scanDirectories:
-    # WordPress root - this might work in a standard non-symlinked Forme setup but you'll usually want the absolute path to a local wordpress installation
-    - ../../../
   level: 6
   bootstrapFiles:
     - phpstan-suppress-errors.php
@@ -19,3 +16,4 @@ parameters:
     - ./app
   excludePaths:
     - tests
+    - wp-test

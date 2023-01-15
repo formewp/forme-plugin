@@ -1,7 +1,5 @@
 <?php
 
-// these are shared constants and function for all types of tests (unit, integration and end to end)
-
 use Faker\Factory;
 use Faker\Generator;
 use Forme\Framework\Models\Post;
@@ -33,6 +31,13 @@ function rollback()
 function faker(): Generator
 {
     return Factory::create();
+}
+
+if (!function_exists('activatePlugins')) {
+    function activatePlugins(): void
+    {
+        include_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
 }
 
 /**
@@ -296,10 +301,6 @@ function _upload_dir_https($uploads)
     return $uploads;
 }
 
-// Skip `setcookie` calls in auth_cookie functions due to warning:
-// Cannot modify header information - headers already sent by...
-addFilter('send_auth_cookies', '__return_false');
-
 /**
  * After the init action has been run once, trying to re-register block types can cause
  * _doing_it_wrong warnings. To avoid this, unhook the block registration functions.
@@ -372,4 +373,3 @@ function _unhook_block_registration()
     remove_action('init', 'register_core_block_types_from_metadata');
     remove_action('init', 'register_block_core_widget_group');
 }
-addFilter('init', '_unhook_block_registration', 1000);
