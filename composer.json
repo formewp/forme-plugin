@@ -3,7 +3,7 @@
     "description": "Your description goes here",
     "type": "wordpress-plugin",
     "require": {
-        "forme/framework": "^2.1.9"
+        "forme/framework": "^3.0"
     },
     "require-dev": {
         "captainhook/captainhook": "^5.0",
@@ -12,8 +12,8 @@
         "friendsofphp/php-cs-fixer": "^3.8",
         "nunomaduro/larastan": "^2.2",
         "pestphp/pest": "^1.22",
-        "php-stubs/acf-pro-stubs": "^5.12",
-        "php-stubs/woocommerce-stubs": "^6.0",
+        "php-stubs/acf-pro-stubs": "^6.0",
+        "php-stubs/woocommerce-stubs": "^7.0",
         "php-stubs/wp-cli-stubs": "^2.6",
         "phpstan/phpstan": "^1.8",
         "ramsey/conventional-commits": "^1.3",
