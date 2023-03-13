@@ -18,7 +18,7 @@
     "emeraldwalk.runonsave": {
         "commands": [
             {
-                "match": "\\[^plate].php$",
+                "match": "(?<!\\.plate)\\.php$",
                 "cmd": "${workspaceFolder}/tools/php-cs-fixer fix --verbose --config=${workspaceFolder}/.php-cs-fixer.dist ${file}"
             },
         ]
