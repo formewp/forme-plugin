@@ -31,16 +31,10 @@ if (!defined('WPINC')) {
 }
 
 /*
- * Load dotenv
+ * Bootstrap forme framework
  *
  **/
-\Forme\loadDotenv();
-
-/*
- * Load Whoops if dev
- *
- **/
-\Forme\loadWhoops();
+\Forme\bootstrap();
 
 /**
  * Include routes.
