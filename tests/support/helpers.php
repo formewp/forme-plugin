@@ -9,6 +9,7 @@ use Forme\Framework\Models\UserMeta;
 
 use function Forme\getInstance;
 
+use Illuminate\Support\Env;
 use VendorName\ReplaceMePlugin\Database\Migrations;
 
 function migrate()
@@ -37,6 +38,22 @@ if (!function_exists('activatePlugins')) {
     function activatePlugins(): void
     {
         include_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+}
+
+if (!function_exists('resetEnvValue')) {
+    function resetEnvValue($name, $value)
+    {
+        // see https://stackoverflow.com/a/66775842
+        $environmentRepository = Env::getRepository();
+
+        $fn = function () use ($name, $value) {
+            $fn = function () use ($name, $value) {
+                $this->writer->write($name, $value);
+            };
+            $fn->call($this->writer);
+        };
+        $fn->call($environmentRepository);
     }
 }
 
