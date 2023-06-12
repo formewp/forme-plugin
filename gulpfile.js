@@ -27,7 +27,8 @@ function swapNameStrings() {
         'webpack.config.js',
         'replace-me.php',
         'uninstall.php',
-        'tests/**/**'
+        'tests/**/**',
+        'phpstan.neon.exaample'
     ];
     let pascalName = pascalCase(argv.name);
     let kebabName = paramCase(argv.name);

@@ -14,8 +14,10 @@ parameters:
     noUnnecessaryCollectionCallExcept: []
     squashedMigrationsPath: []
     databaseMigrationsPath: []
+    # viewDirectories: []
     checkModelProperties: false
     checkPhpDocMissingReturn: false
+    # checkUnusedViews: false
 
 parametersSchema:
     checkOctaneCompatibility: bool()
@@ -252,11 +254,6 @@ services:
             - phpstan.broker.dynamicFunctionReturnTypeExtension
 
     -
-        class: NunoMaduro\Larastan\ReturnTypes\Helpers\ViewExtension
-        tags:
-            - phpstan.broker.dynamicFunctionReturnTypeExtension
-
-    -
         class: NunoMaduro\Larastan\ReturnTypes\Helpers\ValidatorExtension
         tags:
             - phpstan.broker.dynamicFunctionReturnTypeExtension
@@ -379,12 +376,14 @@ services:
         class: NunoMaduro\Larastan\Properties\MigrationHelper
         arguments:
             databaseMigrationPath: %databaseMigrationsPath%
+            disableMigrationScan: true
             parser: @currentPhpVersionSimpleDirectParser
 
     -
         class: NunoMaduro\Larastan\Properties\SquashedMigrationHelper
         arguments:
             schemaPaths: %squashedMigrationsPath%
+            disableSchemaScan: true
 
     -
         class: NunoMaduro\Larastan\Rules\ModelProperties\ModelPropertiesRuleHelper
@@ -419,6 +418,9 @@ services:
     -
         class: NunoMaduro\Larastan\LarastanStubFilesExtension
         tags: [phpstan.stubFilesExtension]
+
+    - NunoMaduro\Larastan\ReturnTypes\AppMakeHelper
+    - NunoMaduro\Larastan\Support\HigherOrderCollectionProxyHelper
 rules:
     - NunoMaduro\Larastan\Rules\RelationExistenceRule
     - NunoMaduro\Larastan\Rules\UselessConstructs\NoUselessWithFunctionCallsRule
