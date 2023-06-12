@@ -50,7 +50,8 @@ function swapVendorStrings() {
         'app/**/**',
         'composer.json',
         'replace-me.php',
-        'uninstall.php'
+        'uninstall.php',
+        'tests/**/**'
     ];
     let pascalName = pascalCase(argv.vendor);
     let kebabName = paramCase(argv.vendor);
