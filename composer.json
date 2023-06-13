@@ -11,7 +11,7 @@
         "fakerphp/faker": "^1.20",
         "friendsofphp/php-cs-fixer": "^3.8",
         "nunomaduro/larastan": "^2.2",
-        "pestphp/pest": "^1.22",
+        "pestphp/pest": "^2.0",
         "php-stubs/acf-pro-stubs": "^6.0",
         "php-stubs/woocommerce-stubs": "^7.0",
         "php-stubs/wp-cli-stubs": "^2.6",
