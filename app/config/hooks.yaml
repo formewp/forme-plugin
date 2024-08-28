@@ -12,7 +12,7 @@ actions:
     class: VendorName\ReplaceMePlugin\Registry\FieldRegistry
   - hook: plugins_loaded
     class: VendorName\ReplaceMePlugin\Registry\I18nRegistry
-  - hook: cli_init
+  - hook: init
     class: VendorName\ReplaceMePlugin\Registry\CommandRegistry
 filters:
   - hook: post_updated_messages

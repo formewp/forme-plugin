@@ -1,20 +1,21 @@
 <?php
 
-/**
- * This boilerplate file is auto-generated.
- */
-
 declare(strict_types=1);
 
 namespace VendorName\ReplaceMePlugin\Registry;
 
 use Forme\Framework\Registry\RegistryInterface;
-//use WP_CLI;
 
 final class CommandRegistry implements RegistryInterface
 {
     public function register(): void
     {
-        // Register your commands here.
+        if (! PHP_SAPI === 'cli') {
+            return;
+        }
+        $classFiles = glob(__DIR__ . '/../FormeCommand/*');
+        foreach ($classFiles as $classFile) {
+            require_once $classFile;
+        }
     }
 }
