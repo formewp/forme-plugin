@@ -8,17 +8,17 @@
     "require-dev": {
         "captainhook/captainhook": "^5.0",
         "dg/bypass-finals": "^1.4",
-        "fakerphp/faker": "^1.20",
-        "friendsofphp/php-cs-fixer": "^3.8",
+        "fakerphp/faker": "^1.23",
+        "friendsofphp/php-cs-fixer": "^3.64",
         "nunomaduro/larastan": "^2.2",
         "pestphp/pest": "^2.0",
         "php-stubs/acf-pro-stubs": "^6.0",
-        "php-stubs/woocommerce-stubs": "^7.0",
-        "php-stubs/wp-cli-stubs": "^2.6",
-        "phpstan/phpstan": "^1.8",
+        "php-stubs/woocommerce-stubs": "^9.2",
+        "php-stubs/wp-cli-stubs": "^2.10",
+        "phpstan/phpstan": "^1.12",
         "ramsey/conventional-commits": "^1.3",
         "symfony/var-dumper": "^6.0",
-        "szepeviktor/phpstan-wordpress": "^1.0.2"
+        "szepeviktor/phpstan-wordpress": "^1.3.5"
     },
     "autoload": {
         "psr-4": {
