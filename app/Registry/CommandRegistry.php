@@ -13,7 +13,7 @@ final class CommandRegistry implements RegistryInterface
         if (! PHP_SAPI === 'cli') {
             return;
         }
-        $classFiles = glob(__DIR__ . '/../FormeCommand/*');
+        $classFiles = glob(__DIR__ . '/../Commands/Wrangle/*');
         foreach ($classFiles as $classFile) {
             require_once $classFile;
         }
