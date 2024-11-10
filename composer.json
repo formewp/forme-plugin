@@ -44,8 +44,8 @@
         "cs:check": "./tools/php-cs-fixer fix --config ./.php-cs-fixer.dist --dry-run --diff",
         "cs:fix": "./tools/php-cs-fixer fix --config ./.php-cs-fixer.dist --diff",
         "changelog": "git cliff -o CHANGELOG.md",
-        "hooks": "./tools/captainhook install -f",
-        "post-install-cmd": "@hooks"
+        "git-hooks": "./tools/captainhook install -f",
+        "post-install-cmd": "@git-hooks"
     },
     "extra": {
         "dev-files": [
