@@ -28,7 +28,7 @@ function swapNameStrings() {
         'replace-me.php',
         'uninstall.php',
         'tests/**/**',
-        'phpstan.neon.exaample'
+        'phpstan.neon.example'
     ];
     let pascalName = pascalCase(argv.name);
     let kebabName = paramCase(argv.name);
