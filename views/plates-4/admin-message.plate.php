@@ -1,3 +1,0 @@
-<div class="notice-<?=$type?> notice">
-    <p><?=$text?></p>
-</div>
