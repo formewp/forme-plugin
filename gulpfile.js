@@ -6,14 +6,14 @@ const rename = require('gulp-rename');
 const del = require('del');
 
 const viewDirectories = [
-    'views/plates-4',
+    'views/platine',
     'views/plates',
     'views/twig',
     'views/blade'
 ];
 
 const viewClasses = {
-    'plates-4': 'LegacyPlatesView',
+    'platine': 'PlatineView',
     'blade': 'BladeView',
     'twig': 'TwigView',
     'plates': 'PlatesView',
@@ -85,7 +85,7 @@ function deleteRenamedFiles() {
 
 function copyViews() {
     if (typeof argv.view === "undefined") {
-        argv.view = "plates-4";
+        argv.view = "platine";
     }
     // copy contents to /views/
     return src('views/' + argv.view + '/**/**').pipe(dest('./views/'));
@@ -97,7 +97,7 @@ function deleteSourceViews() {
 
 function updateViewClass() {
     if (typeof argv.view === "undefined") {
-        argv.view = "plates-4";
+        argv.view = "platine";
     }
     return src('./app/Core/View.php')
         .pipe(replace('ViewClassGoesHere', viewClasses[argv.view]))
