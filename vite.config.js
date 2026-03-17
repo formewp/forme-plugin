@@ -38,6 +38,7 @@ export default defineConfig(({command}) => ({
     },
     build: {
         outDir: 'assets/dist',
+        assetsDir: '',
         manifest: true,
         emptyOutDir: true,
         rollupOptions: {
