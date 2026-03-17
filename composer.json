@@ -9,7 +9,7 @@
         "captainhook/captainhook": "^5.0",
         "dg/bypass-finals": "^1.4",
         "fakerphp/faker": "^1.23",
-        "friendsofphp/php-cs-fixer": "^4.04",
+        "friendsofphp/php-cs-fixer": "^3.64",
         "nunomaduro/larastan": "^2.2",
         "pestphp/pest": "^4.0",
         "php-stubs/acf-pro-stubs": "^6.0",
