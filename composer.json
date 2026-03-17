@@ -3,7 +3,7 @@
     "description": "Your description goes here",
     "type": "wordpress-plugin",
     "require": {
-        "forme/framework": "^4.0.1"
+        "forme/framework": "^4.1.0"
     },
     "require-dev": {
         "captainhook/captainhook": "^5.0",
