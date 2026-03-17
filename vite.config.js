@@ -29,8 +29,13 @@ function hotFilePlugin() {
     }
 }
 
-export default defineConfig({
-    base: '/wp-content/plugins/replace-me-plugin/assets/dist/',
+export default defineConfig(({command}) => ({
+    base: command === 'build'
+        ? '/wp-content/plugins/replace-me-plugin/assets/dist/'
+        : '/',
+    resolve: {
+        preserveSymlinks: true
+    },
     build: {
         outDir: 'assets/dist',
         manifest: true,
@@ -44,5 +49,8 @@ export default defineConfig({
     ],
     server: {
         cors: true,
+        watch: {
+            ignored: ['**/wp-test/**'],
+        },
     },
-})
+}))
