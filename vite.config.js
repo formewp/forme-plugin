@@ -36,7 +36,7 @@ export default defineConfig({
         manifest: true,
         emptyOutDir: true,
         rollupOptions: {
-            input: 'assets/src/js/app.js',
+            input: ['assets/src/js/app.js', 'assets/src/css/app.css'],
         },
     },
     plugins: [
