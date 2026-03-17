@@ -3,14 +3,12 @@
     "description": "Your description goes here",
     "main": "assets/src/js/app.js",
     "scripts": {
-        "encore": "encore",
-        "build": "encore production",
-        "dev": "encore dev",
-        "serve": "encore dev-server"
+        "build": "vite build",
+        "dev": "vite",
+        "preview": "vite preview"
     },
     "private": true,
     "devDependencies": {
-        "@symfony/webpack-encore": "^3.0.0",
-        "webpack-notifier": "^1.13.0"
+        "vite": "^7.0.0"
     }
 }

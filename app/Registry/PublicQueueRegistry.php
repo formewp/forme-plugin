@@ -20,20 +20,46 @@ final class PublicQueueRegistry implements RegistryInterface
          * if you aren't using a forme theme, you might need to sort out jquery here
          */
         // via encore/dist or static
-        wp_enqueue_style('replace-me-plugin-public-styles', Assets::uri('app.css'), [], Assets::time('app.css'));
-        wp_enqueue_script('replace-me-plugin-public-scripts', Assets::uri('app.js'), ['jquery'], Assets::time('app.js'), true);
+        if (Assets::devServerActive()) {
+            // Dev: inject the Vite client in the head, then the entry module.
+            // CSS is injected by Vite automatically — no wp_enqueue_style needed.
+            wp_enqueue_script('vite-client', Assets::viteClientUri(), [], null, false);
+            wp_enqueue_script('replace-me-plugin-public-scripts', Assets::uri('assets/src/js/app.js'), [], null, false);
+        } else {
+            // Production: enqueue CSS extracted by Vite from the entry, then the hashed JS.
+            $version  = Assets::time('assets/src/js/app.js');
+            $cssPaths = Assets::cssFromManifest('assets/src/js/app.js');
+
+            foreach ($cssPaths as $index => $cssUri) {
+                wp_enqueue_style(
+                    'replace-me-plugin-public-styles-' . $index,
+                    $cssUri,
+                    [],
+                    $version
+                );
+            }
+
+            wp_enqueue_script(
+                'replace-me-plugin-public-scripts',
+                Assets::uri('assets/src/js/app.js'),
+                [],
+                $version,
+                true
+            );
+        }
     }
 
     /**
-     * Make enqueues into browser modules so that we can use all the include goodness.
+     * Add type="module" to Vite-managed script tags.
      */
     public function moduleTag(string $tag, string $handle, string $src): string
     {
-        // bail if not script or if dist exists
-        if ($handle !== 'replace-me-plugin-public-scripts' || Assets::distExists()) {
+        $moduleHandles = ['vite-client', 'replace-me-plugin-public-scripts'];
+
+        if (!in_array($handle, $moduleHandles, true)) {
             return $tag;
         }
-        // make this a module
-        return '<script type="module" src="' . esc_url($src) . '"></script>';
+
+        return '<script type="module" src="' . esc_url($src) . '"></script>' . "\n";
     }
 }

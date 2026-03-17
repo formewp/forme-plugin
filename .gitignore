@@ -8,6 +8,7 @@ tools
 logs
 phinx.yml
 wp-test
+hot
 
 .vscode/*
 !.vscode/settings.json

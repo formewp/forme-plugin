@@ -24,7 +24,7 @@ function swapNameStrings() {
         'app/**/**',
         'composer.json',
         'package.json.stub',
-        'webpack.config.js',
+        'vite.config.js',
         'replace-me.php',
         'uninstall.php',
         'tests/**/**',
