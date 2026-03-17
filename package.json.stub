@@ -4,8 +4,7 @@
     "main": "assets/src/js/app.js",
     "scripts": {
         "build": "vite build",
-        "dev": "vite --host",
-        "preview": "vite preview"
+        "dev": "vite --host"
     },
     "private": true,
     "devDependencies": {
